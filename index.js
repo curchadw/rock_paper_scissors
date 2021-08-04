@@ -5,7 +5,13 @@ const winner_loser = document.getElementById('winner_loser')
 
 document.addEventListener('DOMContentLoaded',(event) => {
     event.preventDefault()
-    game()
+
+    let rockChoice = rock.addEventListener('click',rockMove)
+    let paperChoice = paper.addEventListener('click',paperMove)
+    let scissorsChoice = scissors.addEventListener('click',scissorsMove)
+
+    let playerChoice = rockChoice || paperChoice || scissorsChoice
+    game(playerChoice)
      
    });
 
@@ -36,28 +42,22 @@ document.addEventListener('DOMContentLoaded',(event) => {
      return game(scissors)
   } 
 
-  
 
-  const playerGame = (choice)=>{
-     return choice
-  }
+//   let rockChoice = rock.addEventListener('click',rockMove)
+//   let paperChoice = paper.addEventListener('click',paperMove)
+//   let scissorsChoice = scissors.addEventListener('click',scissorsMove)
 
-
-  rock.addEventListener('click',rockMove)
-  paper.addEventListener('click',paperMove)
-  scissors.addEventListener('click',scissorsMove)
-
+//   let playerChoice = rockChoice || paperChoice || scissorsChoice
 
    const game = (playerChoice)=>{
-        let computer = computerChoice()
-        let player = playerGame(playerChoice)
-
-        if (computer === 'Rock' && player === 'Scissors'){
-          console.log('Loser')
-        }else if(computer === 'Scissors' && player === 'Paper'){
-          console.log('Loser')
-        }else if(computer === 'Scissors' && player === 'Rock'){
-          console.log('Winner')
+        computerChoice()
+        
+        if(playerChoice == 'Rock'){
+             console.log('Test')
+        }else if(playerChoice == 'Paper'){
+             console.log('Test 2')
+        }else{
+             console.log('Test 3')
         }
           
 
